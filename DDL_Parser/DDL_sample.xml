@@ -1,0 +1,136 @@
+<DDL>
+	<Platform>
+		<Type>beagleboard</Type>
+		<Device>
+			<Properties>
+				<Type>Physical</Type> 
+				<Name>LED_r</Name>
+				<Id>0</Id>
+				
+			</Properties>
+			
+			<Interface>
+				<Pin>
+			 		<Topic> 
+						<Name>statusreading</Name> 
+						<Mode>in</Mode>
+						<Returnvalue>float</Returnvalue>	
+						<Output></Output>
+			 		</Topic>
+			 	    <Topic>
+						<Name>Changestatus</Name>
+			 			<Mode>out</Mode>
+						<Output></Output>
+					
+			 	    </Topic>
+				</Pin>
+			 </Interface>
+		</Device>
+		
+		<Device>
+			<Properties>
+				<Type>Physical</Type> 
+				<Name>LED_g</Name>
+				<Id>1</Id>
+				<Type>Digital</Type>
+			</Properties>
+			
+			<Interface>
+			 	<Pin>
+			 		<Topic> 
+						<Name>statusreading</Name> 
+						<Mode>in</Mode>
+						<Returnvalue>float</Returnvalue>	
+						<Output></Output>
+			 		</Topic>
+			 	    <Topic>
+						<Name>Changestatus</Name>
+			 			<Mode>out</Mode>
+						<Output></Output>
+					
+			 	    </Topic>
+				</Pin>
+			 </Interface>
+		</Device>
+		
+		<Device>
+			<Properties>
+				<Type>Physical</Type> 
+				<Name>LED_b</Name>
+				<Id>2</Id>
+				<Type>Digital</Type>
+			</Properties>
+			
+			<Interface>
+			 	<Pin>
+			 		<Topic> 
+						<Name>statusreading</Name> 
+						<Mode>in</Mode>
+						<Returnvalue>float</Returnvalue>	
+						<Output></Output>
+			 		</Topic>
+			 	    <Topic>
+						<Name>Changestatus</Name>
+			 			<Mode>out</Mode>
+						<Output></Output>
+					
+			 	    </Topic>
+				</Pin>
+			 </Interface>
+		</Device>
+		
+		
+		
+		<Device>
+			<Type>virtual</Type>
+			<Name>IntrusionDetector</Name>
+			<Id>3</Id>
+			 <Properties>
+			 	<Signal> 
+					<Type>virtual</Type>
+					<Mode> input</Mode>
+					<Name>detectbrightlight</Name>
+			 		<Pin></Pin>
+			 	</Signal>
+			 	<Signal>
+					<Type>virtual</Type>
+					<Mode>input</Mode>
+					<Name>detecthightemp</Name>
+			 		<Pin></Pin>
+			 	</Signal>
+				<Signal>
+					<Type> virtual</Type>
+					<Mode>output</Mode>
+					<Name>alert</Name>
+			 		<Pin></Pin>
+			 	</Signal>
+			 </Properties>
+			 <Interface>
+			 	<Topic>
+					<Name>alert</Name>
+					<Id>0</Id>
+					<Subscribe>device</Subscribe>
+			 		<Trigger>
+			 			<condition>detectbrightlight | detecthightemp</condition>
+			 		</Trigger>
+			 		<Action>
+						<Type>none</Type>
+			 			<alert/>
+			 		</Action>
+			 	</Topic>
+			 	<Topic>
+					<Name>detectintrusion</Name>
+					<Id>1</Id>
+					<Subscribe>app</Subscribe>
+			 		<Trigger>
+			 			<condition>detectbrightlight | detecthightemp</condition>
+			 		</Trigger>
+			 		<Action> 
+						<Type> bool</Type>
+			 			<output>  true</output>
+			 		</Action>
+			 	</Topic>
+			 </Interface>
+		</Device>
+	</Platform>
+</DDL>

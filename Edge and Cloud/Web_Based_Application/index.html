@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Application to control the Devices</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery UI -->
+    <link href="https://code.jquery.com/ui/1.10.3/themes/redmond/jquery-ui.css" rel="stylesheet" media="screen">
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- styles -->
+    <link href="css/styles.css" rel="stylesheet">
+
+    <link href="css/buttons.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  	<div class="header">
+	     <div class="container">
+	        <div class="row">
+	           <div class="col-md-5">
+	              <!-- Logo -->
+	              <div class="logo">
+	                 <h1><a href="index.html">Device Control</a></h1>
+	              </div>
+	           </div>
+	           <div class="col-md-5">
+	              <div class="row">
+	                <div class="col-lg-12">
+	                  <div class="input-group form">
+	                      
+	                  </div>
+	                </div>
+	              </div>
+	           </div>
+	           <div class="col-md-2">
+	              <div class="navbar navbar-inverse" role="banner">
+	     
+	              </div>
+	           </div>
+	        </div>
+	     </div>
+	</div>
+  <div class="page-content">
+    <div class="row">
+		  <div class="col-md-2">
+		  	<div class="sidebar content-box" style="display: block;">
+          <h3>Click on the get temperature to get the current temperature from the temperature sensor.</h3>
+          <h3>The buzzer can be switched ON and OFF by clicking on the corresponding buttons under the BUZZER section.</h3>
+          <h3>In the RGB section click on the specific colored button to switch on the corresponding LED.</h3>
+          <h3>In the LED section click on the ON or OFF button near the LED of your choice to  switch ON or OFF the corresponding LED.</h3>
+          
+        </div>
+		  </div>
+		  <div class="col-md-10">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="content-box-large">
+              <div class="panel-body">
+                <div class="well" style="margin-top:30px;">
+                    <button id ="gettemp" class="btn btn-lg btn-block btn-primary">GET TEMPERATURE</button>
+                    <div id ="gettemptext"cols="75s"></div>
+                    <!--<button id = "gettemp" type="button" class="btn btn-lg btn-block btn-primary" formaction ="/tempbtn">GET TEMPERATURE</button> -->
+                  </div>
+                <form action="" method="post">
+                  <h4>TEMPERATURE</h4>
+                  
+                   <h4>BUZZER</h4>
+                   <table>
+                        <tr>
+                          <td><h2>TOGGLE </h2></td>
+                          <td><button id ="led1" class="btn btn-warning btn-lg" formaction ="/buzz_on">ON</button></td>
+                          <td><button id ="led1" class="btn btn-warning btn-lg" formaction ="/buzz_off">OFF</button></td>
+                        </tr>
+                    </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-10">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="content-box-large">
+                  <div class="panel-body">
+                  
+                    <h4>LED CONTROL</h4>
+                    <table>
+                        <tr>
+                          <td><h2>LED RED </h2></td>
+                          <td><button id ="led1" class="btn btn-warning btn-lg" formaction ="/led1_on">ON</button></td>
+                          <td><button id ="led1" class="btn btn-warning btn-lg" formaction ="/led1_off">OFF</button></td>
+                        </tr>
+                        <tr>
+                          <td><h2>LED GREEN </h2></td>
+                          <td><button id ="led1" class="btn btn-warning btn-lg" formaction ="/led2_on">ON</button></td>
+                          <td><button id ="led1" class="btn btn-warning btn-lg" formaction ="/led2_off">OFF</button></td>
+                        </tr>
+                      <!-- <tr>
+                          <td><h2>LED BLUE </h2></td>
+                          <td><button id ="led1" class="btn btn-warning btn-lg" formaction ="/led3_on">ON</button></td>
+                          <td><button id ="led1" class="btn btn-warning btn-lg" formaction ="/led3_off">OFF</button></td>
+                        </tr> -->
+                      </table>
+                  </form>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>
